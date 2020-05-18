@@ -1,0 +1,8 @@
+[Defines]
+  DEC_SPECIFICATION              = 1.27
+  PACKAGE_NAME                   = HelloIommuPkg
+  PACKAGE_GUID                   = 7587b33a-78f3-4ae0-ac96-dfec5d83169e
+  PACKAGE_VERSION                = 1.00
+
+[Includes]
+  Include
