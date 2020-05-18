@@ -4,7 +4,7 @@ HelloIommuPkg
 HelloIommuPkg is a sample DXE runtime driver demonstrating how to program DMA
 remapping, one of the Intel VT-d features, to protect the system from DMA access.
 
-This project is meant to show simplified yet functioning code example for learning
+This project is meant to show a simplified yet functioning code example for learning
 purposes and not designed for actual use in production systems.
 
 For more information about this project see my blog post: [Introductory Study of IOMMU (VT-d) and Kernel DMA Protection on Intel Processors ](https://standa-note.blogspot.com/2020/05/introductory-study-of-iommu-vt-d-and.html)
