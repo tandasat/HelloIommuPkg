@@ -18,6 +18,8 @@ Building
     ```
     > edksetup.bat
     > build -t VS2019 -a X64 -b NOOPT -p HelloIommuPkg\HelloIommuPkg.dsc
+    or
+    > build -t CLANGPDB -a X64 -b NOOPT -p HelloIommuPkg\HelloIommuPkg.dsc
     ```
     Or on WSL or Linux,
     ```
