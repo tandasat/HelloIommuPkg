@@ -158,6 +158,14 @@ ProcessDmarTable (
     //
     *DetectedUnitCount = discoveredUnitCount;
 
+    for (UINT64 i = 0; i < discoveredUnitCount; ++i)
+    {
+        DEBUG((DEBUG_VERBOSE, "Unit %d at %p - Cap: %llx, ExCap: %llx\n",
+               i,
+               DmarUnits[i].RegisterBasePa,
+               DmarUnits[i].Capability.Uint64,
+               DmarUnits[i].ExtendedCapability.Uint64));
+    }
     if (discoveredUnitCount == 0)
     {
         DEBUG((DEBUG_ERROR, "No DMA remapping hardware unit found.\n"));
@@ -440,7 +448,7 @@ EnableDmaRemapping (
     VTD_ROOT_TABLE_ADDRESS_REGISTER rootTableAddressReg;
     UINT64 iotlbRegOffset;
 
-    DEBUG((DEBUG_INFO, "Working wit the remapping unit at %p\n", DmarUnit->RegisterBasePa));
+    DEBUG((DEBUG_INFO, "Working with the remapping unit at %p\n", DmarUnit->RegisterBasePa));
 
     //
     // Set the Root Table Pointer. This is equivalent to setting CR3 conceptually.
@@ -637,7 +645,7 @@ HelloIommuDxeInitialize (
     //
     // Allocate data structures configuring address translation, that is, the root
     // table, context table, second-level PML4, PDPT and PD. Then, initialize them
-    // to set up indentity mapping (passthrough translation).
+    // to set up identity mapping (passthrough translation).
     //
     translations = AllocateRuntimePages(EFI_SIZE_TO_PAGES(sizeof(*translations)));
     if (translations == NULL)
